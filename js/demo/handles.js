@@ -4,7 +4,10 @@ define([
   "behave"
 ], function (dom, parser) {
   return {
-    initializeRawCode: function (node) {
+    behave: function (/*Node*/node) {
+      // summary:
+      //    Wraps a node in a Behave instance.
+      // node: Node
       var editor = new Behave({
         textarea: node,
         tabSize: 2
@@ -15,7 +18,10 @@ define([
       //    Simple test method.
       console.log("basic handle triggered");
     },
-    replicatingButton: function (event) {
+    replicatingButton: function (/*Event*/event) {
+      // summary:
+      //    Creates a button with this function as its event handler.
+      // event: Event
       var structure = {
         "button.btn.btn-default.btn-block": {
           _text: "Click Me",

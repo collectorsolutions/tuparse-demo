@@ -15,7 +15,7 @@ define({
             events: {
               "_created": {
                 mid: "demo/handles",
-                method: "initializeRawCode"
+                method: "behave"
               }
             }
           },

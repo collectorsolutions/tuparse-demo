@@ -1,3 +1,46 @@
----
-layout: default
----
+<!doctype html>
+<html>
+  <head>
+    <title>Tuparse Shakur Demo</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+    <style id="parsedStyles"></style>
+  </head>
+  <body>
+    <script src="../js/requirejs/require.js"></script>
+    <script src="../js/config.js"></script>
+    <script>
+      require([
+        "jquery",
+        "tuparse-shakur/parser",
+        "tuparse-shakur/css",
+        "tuparse-shakur/dom",
+        "tuparse-shakur/tests/data",
+        "demo/structure"
+      ], function ($, parser, css, dom, testData, structure) {
+        var parsed = parser.parse(structure, {
+          css: {
+            appendWhenDone: true
+          },
+          dom: {
+            appendWhenDone: true
+          }
+        });
+
+        parsed.dom.then(function () {
+          var parsed = parser.parse(testData, {
+            css: {
+              appendWhenDone: true,
+              stylesNode: document.getElementById("parsedStlyes")
+            },
+            dom: {
+              appendWhenDone: true,
+              parentNode: document.getElementById("parsedCode")
+            }
+          });
+
+          document.getElementById("rawCode").innerHTML = JSON.stringify(testData, undefined, 2);
+        });
+      });
+    </script>
+  </body>
+</html>

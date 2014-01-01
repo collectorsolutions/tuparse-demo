@@ -1,12 +1,12 @@
 [submodule "js/requirejs"]
 	path = js/requirejs
-	url = git@github.com:jrburke/requirejs.git
+	url = https://github.com/jrburke/requirejs.git
 [submodule "js/put-selector"]
 	path = js/put-selector
-	url = git@github.com:kriszyp/put-selector.git
+	url = https://github.com/kriszyp/put-selector.git
 [submodule "js/tuparse-shakur"]
 	path = js/tuparse-shakur
-	url = git@github.com:collectorsolutions/tuparse-shakur.git
+	url = https://github.com/collectorsolutions/tuparse-shakur.git
 [submodule "js/behave"]
 	path = js/behave
-	url = git@github.com:jakiestfu/Behave.js.git
+	url = https://github.com/jakiestfu/Behave.js.git

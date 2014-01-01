@@ -1,7 +1,8 @@
 define([
+  "tuparse-shakur/dom",
   "./parser",
   "behave"
-], function (parser) {
+], function (dom, parser) {
   return {
     initializeRawCode: function (node) {
       var editor = new Behave({
@@ -9,10 +10,26 @@ define([
         tabSize: 2
       });
     },
-    test: function () {
+    basic: function () {
       // summary:
       //    Simple test method.
-      console.log("successful test");
+      console.log("basic handle triggered");
+    },
+    replicatingButton: function (event) {
+      var structure = {
+        "button.btn.btn-default.btn-block": {
+          _text: "Click Me",
+          type: "button",
+          events: {
+            click: {
+              mid: "demo/handles",
+              method: "replicatingButton"
+            }
+          }
+        }
+      };
+
+      dom.parse(structure).appendAll(event.target.parentNode);
     },
     parseCode: parser.tryParse,
     clear: function () {

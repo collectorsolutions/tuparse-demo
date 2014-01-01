@@ -5,7 +5,7 @@ define({
         ".col-lg-6.col-lg-offset-3": {
           ".header": {
             "h2.title": {
-              text: "Tuparse Shakur Demo"
+              _text: "Tuparse Shakur Demo"
             }
           }
         },
@@ -20,7 +20,7 @@ define({
             }
           },
           "button.btn.btn-block.btn-info": {
-            text: "Parse",
+            _text: "Parse",
             type: "button",
             events: {
               click: {
@@ -30,7 +30,7 @@ define({
             }
           },
           "button.btn.btn-block.btn-danger": {
-            text: "Clear",
+            _text: "Clear",
             type: "button",
             events: {
               click: {

@@ -19,7 +19,7 @@ define([
 
       try {
         // Make it valid JSON in case they do not add quotes to everything.
-        parsed = parser.parse(JSON.parse(code.replace(/\s+\w+/g, function (match) { return match.replace(/\w+/, function (match) { return '"' + match + '"'; }) })));
+        parsed = parser.parse(JSON.parse(code.replace(/\s{2,}\w+\:/g, function (match) { return match.replace(/\w+/, function (match) { return '"' + match + '"'; }) })));
 
         if (parsed.css) {
           parsedStyles.innerHTML = parsed.css;

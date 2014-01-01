@@ -1,5 +1,5 @@
 requirejs.config({
-  baseUrl: "/js",
+  baseUrl: "js",
   paths: {
     jquery: "jquery/jquery",
     behave: "behave/behave"

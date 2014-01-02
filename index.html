@@ -14,9 +14,10 @@
         "tuparse-shakur/parser",
         "tuparse-shakur/css",
         "tuparse-shakur/dom",
-        "tuparse-shakur/tests/data",
-        "demo/structure"
-      ], function ($, parser, css, dom, testData, structure) {
+        "tuparse-demo/structure",
+        "tuparse-demo/examples",
+        "tuparse-demo/parser"
+      ], function ($, parser, css, dom, structure, examples, demoParser) {
         var parsed = parser.parse(structure, {
           css: {
             appendWhenDone: true
@@ -26,19 +27,15 @@
           }
         });
 
+        // Set up only one example for now.
         parsed.dom.then(function () {
-          var parsed = parser.parse(testData, {
-            css: {
-              appendWhenDone: true,
-              stylesNode: document.getElementById("parsedStyles")
-            },
-            dom: {
-              appendWhenDone: true,
-              parentNode: document.getElementById("parsedCode")
-            }
-          });
+          var example = examples.replicatingButton;
 
-          document.getElementById("rawCode").innerHTML = JSON.stringify(testData, undefined, 2);
+          document.getElementById("rawCode").value = JSON.stringify(example.structure, undefined, 2);
+          document.getElementById("moduleMid").value = "demo/handles";
+          document.getElementById("moduleDefinition").value = examples.createFunction(example, "demo/handles");
+
+          demoParser.tryParse();
         });
       });
     </script>

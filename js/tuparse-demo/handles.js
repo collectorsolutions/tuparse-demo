@@ -33,10 +33,6 @@ define([
       document.getElementById("rawCode").value = "";
       document.getElementById("parsedCode").innerHTML = "";
       handles.resetCustomModuleDefinition();
-    },
-    cancelCustomHandles: function () {
-      handles.resetCustomModuleDefinition();
-      handles.toggleCustomHandlesModule();
     }
   };
   return handles;

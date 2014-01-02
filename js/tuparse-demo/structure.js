@@ -52,7 +52,7 @@ define({
                 }
               },
               ".btn.btn-info.btn-block": {
-                _text: "OK",
+                _text: "Done",
                 type: "button",
                 events: {
                   click: {
@@ -62,12 +62,12 @@ define({
                 }
               },
               ".btn.btn-danger.btn-block": {
-                _text: "Cancel",
+                _text: "Reset",
                 type: "button",
                 events: {
                   click: {
                     mid: "tuparse-demo/handles",
-                    method: "cancelCustomHandles"
+                    method: "resetCustomModuleDefinition"
                   }
                 }
               }

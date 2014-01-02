@@ -5,15 +5,26 @@ define([
     createFunction: function (/*Object*/example, /*String*/handleId) {
       // summary:
       //    Turns a handle function into a proper define function string
+      // example: Object
+      // handleId: String
       var handle = example.handles[handleId],
         dependencies = handle.dependencies,
-        fn = "define(", i, total;
+        fn = "define(", i, total,
+        indentRegex = new RegExp("^\\s{" + handle.indentation + "}"),
+        fnParts = handle.fn.toString().split(/\n/),
+        i, part;
 
       if (dependencies.length) {
-        fn += "[\"" + dependencies.join("\",\"") + "\"], ";
+        fn += "[\n  \"" + dependencies.join("\",\n  \"") + "\"\n], ";
       }
 
-      fn += "\n" + handle.fn.toString() + ");";
+      i = 0;
+
+      while (part = fnParts[i++]) {
+        fn += part.replace(indentRegex, "") + "\n";
+      }
+
+      fn = fn.substring(0, fn.length - 1) + ");"
 
       return fn;
     },
@@ -64,6 +75,7 @@ define([
       },
       handles: {
         "demo/handles": {
+          indentation: 10,
           dependencies: ["tuparse-shakur/dom"],
           fn: function (dom) {
             return {

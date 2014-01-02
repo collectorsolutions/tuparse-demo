@@ -4,7 +4,7 @@ define([
   "behave",
   "jquery"
 ], function (dom, parser) {
-  return {
+  var handles = {
     behave: function (/*Node*/node) {
       // summary:
       //    Wraps a node in a Behave instance.
@@ -32,7 +32,8 @@ define([
       //    Clears everything.
       document.getElementById("rawCode").value = "";
       document.getElementById("parsedCode").innerHTML = "";
-      this.resetCustomModuleDefinition();
+      handles.resetCustomModuleDefinition();
     }
-  }
+  };
+  return handles;
 });

@@ -60,6 +60,16 @@ define({
                     method: "toggleCustomHandlesModule"
                   }
                 }
+              },
+              ".btn.btn-danger.btn-block": {
+                _text: "Cancel",
+                type: "button",
+                events: {
+                  click: {
+                    mid: "tuparse-demo/handles",
+                    method: "cancelCustomHandles"
+                  }
+                }
               }
             }
           }

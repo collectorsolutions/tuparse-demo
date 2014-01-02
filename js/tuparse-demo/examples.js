@@ -20,7 +20,7 @@ define([
 
       i = 0;
 
-      while (part = fnParts[i++]) {
+      while ((part = fnParts[i++]) !== undefined) {
         fn += part.replace(indentRegex, "") + "\n";
       }
 

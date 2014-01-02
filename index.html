@@ -33,7 +33,7 @@
 
           document.getElementById("rawCode").value = JSON.stringify(example.structure, undefined, 2);
           document.getElementById("moduleMid").value = "demo/handles";
-          document.getElementById("moduleDefinition").value = examples.createFunction(example, "demo/handles");
+          document.getElementById("moduleDefinition").value = "define([\n  \"tuparse-shakur/dom\"\n], function (dom) {\n  return {\n    replicatingButton: function (/*Event*/event) {\n      // summary:\n     //    Creates a button with this function as its event handler.\n     // event: Event\n     var structure = {\n        \"button.btn.btn-default.btn-block\": {\n          _text: \"Click Me\",\n          type: \"button\",\n          events: {\n            click: {\n              mid: \"demo/handles\",\n              method: \"replicatingButton\"\n            }\n          }\n        }\n      };\n\n      dom.parse(structure).appendAll(event.target.parentNode);\n    }\n  };\n});"
 
           demoParser.tryParse();
         });

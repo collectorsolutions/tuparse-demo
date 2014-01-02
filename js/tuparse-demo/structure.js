@@ -62,7 +62,7 @@ define({
                 }
               },
               ".btn.btn-danger.btn-block": {
-                _text: "Reset",
+                _text: "Clear",
                 type: "button",
                 events: {
                   click: {
